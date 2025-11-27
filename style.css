@@ -271,3 +271,7 @@ footer p:last-child {
         margin-bottom: 30px;
     }
 }
+.image{
+    width: 300px;   
+    height: auto;
+}
