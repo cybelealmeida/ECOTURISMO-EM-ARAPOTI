@@ -1,1 +1,273 @@
+/* Definições Globais e Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background: #004d40; /* Verde escuro, cor da natureza */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-weight: 700;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: #00796b; /* Um verde mais claro para hover */
+    border-radius: 5px;
+}
+
+/* --- Seção de Destaque (Hero) --- */
+.hero {
+    background: url('https://via.placeholder.com/1920x600/00796b/ffffff?text=Cânion+do+Cerrado+-+Arapoti');
+    /* Troque este placeholder por uma imagem de alta qualidade de Arapoti */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay escuro para melhorar a leitura */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    background: #4caf50; /* Verde brilhante */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #66bb6a;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: #ffb300; /* Amarelo/Laranja para contraste */
+}
+
+.btn.secondary:hover {
+    background: #ffc107;
+}
+
+/* --- Seções de Conteúdo --- */
+section {
+    padding: 60px 0;
+}
+
+.section-padded {
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #004d40;
+}
+
+/* --- Grid de Atrações --- */
+.grid-atracoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.atracao-card {
+    background: #e0f2f1; /* Fundo claro para os cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.atracao-card h3 {
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+/* --- Seção Roteiros (Lista) --- */
+#roteiros {
+    background: #c8e6c9; /* Fundo suave para contraste */
+}
+
+#roteiros .description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#roteiros ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding-left: 20px;
+}
+
+#roteiros ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%234CAF50" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+    background-size: 16px;
+    padding: 10px 0 10px 25px;
+    border-bottom: 1px solid #a5d6a7;
+    font-weight: 500;
+}
+
+#roteiros ul li:last-child {
+    border-bottom: none;
+}
+
+/* --- Formulário de Contato --- */
+#contato {
+    text-align: center;
+}
+
+#contato form {
+    max-width: 500px;
+    margin: 20px auto 0;
+    text-align: left;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #004d40;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* --- Rodapé --- */
+footer {
+    background: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer p:last-child {
+    margin-top: 5px;
+}
+
+/* --- Responsividade (Ajustes para telas menores) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+}
